@@ -1,2 +1,2 @@
-# flip_book_resturant_menu
+# flip_book_restaurant_menu
 Flip Book Engine for illustrate a restourant menu
