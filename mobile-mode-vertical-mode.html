@@ -10,22 +10,22 @@
     <title>Flip Book Mobile Mode - Vertical Menu </title>
 
     <style>
-/*      #flipbook {
-        overflow: hidden !important;
+      #gallery {
         display: flex;
+        justify-content: center;
+        flex-direction: column;
 
-        background-color: white;
+        width: 90%;
       }
       
-      #flipbook .page {
-        height: 600px;
+      #gallery .page {
       }
 
       .mega-block {
         display:flex;
         justify-content: center;
       }
-*/
+
       /* Extra small devices (phones, 600px and down) */
       @media only screen and (max-width: 600px) {
 
@@ -34,6 +34,7 @@
       /* Small devices (portrait tablets and large phones, 600px and up) */
       @media only screen and ((min-width: 250px) and (max-width: 767px)) {
         body {
+          height: auto;
           background-color: green;
         }
 
@@ -71,21 +72,25 @@
         margin: 0;
         padding: 0;
         display: block;
-        overflow: hidden !important;
       }
 
+      .frame-photo{
+        margin-bottom: 3%;
+      }
+
+
       img {
+        justify-self: center;
         width: 100%;
         height: 100%;
-
-        overflow: hidden !important;
+        border: 1px solid black;
       }
 
 
       /*button {
         /* background-color: green; */
       }
-/*      
+      /*      
      //Box-Buttons
       .container-buttons {
         display: flex;
@@ -117,23 +122,23 @@
   
   <body>
     <div class="mega-block">
-    <div id="flipbook">
-        <div>
+    <div id="gallery">
+        <div class="frame-photo">
           <img src="images/01.jpg">
         </div> 
-        <div>
+        <div class="frame-photo">
           <img src="images/02.jpg">
         </div> 
-        <div>
+        <div class="frame-photo">
           <img src="images/03.jpg">
         </div>
-        <div>
+        <div class="frame-photo">
           <img src="images/04.jpg">
         </div>
-        <div>
+        <div class="frame-photo">
           <img src="images/05.jpg">
         </div>
-        <div>
+        <div class="frame-photo">
           <img src="images/06.jpg">
         </div>
     </div>
