@@ -78,12 +78,42 @@
         margin-bottom: 3%;
       }
 
-
       img {
         justify-self: center;
         width: 100%;
         height: 100%;
         border: 1px solid black;
+      }
+
+      .menu-box {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        justify-self: center;
+
+      }
+
+      .elements-box {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+
+        width: 90%;
+        background-color: red;
+        /*border: 1px solid red; */
+      }
+
+      .menu-box h1 {
+        font-family: modern-symphony-serif; /* Stile Carattere non presente in cache */
+      }
+
+      .menu-box img {
+        width: 10%;
+        height: 10%;
+
+        border: none;
       }
 
 
@@ -121,8 +151,19 @@
   </head>
   
   <body>
+    <div class="menu-box">
+      <div class="elements-box">
+        <h1> MENU </h1>
+        <img src="images/logo_osteria.png">
+      </div>
+    </div>
+
     <div class="mega-block">
     <div id="gallery">
+        <div class="frame-photo">
+          <h1> MENU </h1>
+          <img src="images/logo_osteria.png">
+        </div>
         <div class="frame-photo">
           <img src="images/01.jpg">
         </div> 
