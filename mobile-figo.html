@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>Flip Book Mobile Mode - Vertical Menu </title>
+    <style>
+    html,
+    body,
+    div {
+        margin: 0;
+        font-size: 18px;
+        font-family: 'Croissant One', cursive;
+    }
+
+    .head-container {
+        border-bottom: 3px dashed #f1c992;
+        display: flex;
+        padding: 30px;
+        align-items: center;
+    }
+
+    .left-head {
+        width: 30%;
+        min-height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.4em;
+    }
+
+    .right-head {
+        width: 30%;
+        min-height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.4em;
+    }
+
+    .center-head {
+        width: 40%;
+        min-height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .category-block {
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .category-block h1 {
+        font-size: 2em;
+        color: white;
+        text-shadow: 1px 1px #000000;
+    }
+
+    .products-wrapper {
+        padding: 15px;
+    }
+
+    .product-block {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        padding: 13px;
+        justify-content: center;
+        background: #ffffff61;
+        border-radius: 1em;
+        box-shadow: 0px 2px #0000005c;
+    }
+
+    .product-description {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: left;
+        flex-direction: column;
+        font-size: 0.8em;
+    }
+
+    .product-description h4 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 900;
+        display: block;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        color: #85341d;
+    }
+
+    .product-description p {
+        font-family: 'Playfair Display', serif;
+        display: block;
+    }
+
+    .product-price {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        font-size: 1em;
+        padding: 5px;
+    }
+
+    #gallery {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        width: 90%;
+    }
+
+    .product-name-price {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .product-name {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        font-size: 1em;
+        padding: 5px;
+    }
+
+    #gallery .page {}
+
+    .mega-block {
+        display: flex;
+        justify-content: center;
+    }
+
+    body {
+        background: #f1ab4b;
+    }
+
+
+    #logo-img {
+        width: 50%;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {}
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and ((min-width: 250px) and (max-width: 767px)) {}
+
+    /* Medium devices (landscape tablets, 300px and up) */
+    @media only screen and ((min-width: 300px) and (max-width: 450px)) {}
+
+    /* Medium devices (landscape tablets, 300px and up) */
+    @media only screen and ((min-width: 451px) and (max-width: 680px)) {}
+
+    /* Medium devices (landscape tablets, 300px and up) */
+    @media only screen and ((min-width: 681px) and (max-width: 999px)) {}
+
+    /* Extra large devices (large laptops and desktops, 1000px and up) */
+    @media only screen and (min-width: 1000px) {
+        .left-head,
+        .right-head {
+            font-size: 4em;
+        }
+        #logo-img{
+          width: 30%;
+        }
+        .products-wrapper {
+          padding: 0;
+          padding-left: 20vw;
+          padding-right: 20vw;
+          padding-bottom: 20px;
+        }
+        .category-block h1 {
+          font-size: 2.5em;
+        }
+        .product-description h4 {
+          font-size:2em;
+        }
+        .product-description p {
+          font-size: 1.4em;
+        }
+        .product-price{
+          font-size:2em;
+        }
+    }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="head-container">
+        <div class="left-head">
+            MENU
+        </div>
+        <div class="center-head">
+            <img id="logo-img" src="images/logo_osteria.png">
+        </div>
+        <div class="right-head">
+            OSTERIA
+        </div>
+    </div>
+    <div class="products-wrapper">
+        
+        <div class="category-block">
+            <h1>ANTIPASTI</h1>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>AFFETTATI</h4>
+                    </div>
+                    <div class="product-price">15.00 €</div>
+                </div>
+                <p>
+                    Crudo di mora romagnola stagionatura 18-23 Presidio Slov Food, salame stagio- nato, rustichello romagnolo Presidio Slot Food, prosciutto cottofiliera italiana controllata, prosciutto razza suina autoctona della Romagna
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>CROSTINI</h4>
+                    </div>
+                    <div class="product-price">12.00 €</div>
+                </div>
+                <p>
+                    Pane tipo pugliese, verdure, mozzarella, salsiccia, rustichello romagnolo
+                </p>
+            </div>
+        </div>
+
+
+        <div class="category-block">
+            <h1>PRIMI</h1>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>AFFETTATI</h4>
+                    </div>
+                    <div class="product-price">15.00 €</div>
+                </div>
+                <p>
+                    Crudo di mora romagnola stagionatura 18-23 Presidio Slov Food, salame stagio- nato, rustichello romagnolo Presidio Slot Food, prosciutto cottofiliera italiana controllata, prosciutto razza suina autoctona della Romagna
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>CROSTINI</h4>
+                    </div>
+                    <div class="product-price">12.00 €</div>
+                </div>
+                <p>
+                    Pane tipo pugliese, verdure, mozzarella, salsiccia, rustichello romagnolo
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
