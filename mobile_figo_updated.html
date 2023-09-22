@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title>Flip Book Mobile Mode - Vertical Menu </title>
+    <style>
+    html,
+    body,
+    div {
+        margin: 0;
+        font-size: 18px;
+        font-family: 'Croissant One', cursive;
+    }
+
+    .parent-container {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    .container-left {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    .container-right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .head-container {
+        border-bottom: 3px dashed #f1c992;
+        display: flex;
+        padding: 30px;
+        align-items: center;
+    }
+
+    .left-head {
+        width: 30%;
+        min-height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.4em;
+    }
+
+    .right-head {
+        width: 30%;
+        min-height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.4em;
+    }
+
+    .center-head {
+        width: 40%;
+        min-height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .category-block {
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .category-block h1 {
+        font-size: 2em;
+        color: white;
+        text-shadow: 1px 1px #000000;
+    }
+
+    .products-wrapper {
+        padding: 15px;
+    }
+
+    .product-block {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        padding: 13px;
+        justify-content: center;
+        background: #ffffff61;
+        border-radius: 1em;
+        box-shadow: 0px 2px #0000005c;
+    }
+    .parent-container {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        align-items: flex-start;
+
+        padding: 13px;
+        justify-content: center;
+        background: #ffffff61;
+        border-radius: 1em;
+        box-shadow: 0px 2px #0000005c;
+    }
+
+    .product-description {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: left;
+        flex-direction: column;
+        font-size: 0.8em;
+    }
+
+    .product-description h4 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 900;
+        display: block;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        color: #85341d;
+    }
+
+     .product-container-name h4 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 900;
+        display: block;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        color: #85341d;
+    }
+
+    .product-description p {
+        font-family: 'Playfair Display', serif;
+        display: block;
+    }
+
+    .product-price {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        font-size: 1em;
+        padding: 5px;
+    }
+
+    #gallery {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        width: 90%;
+    }
+
+    .product-name-price {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .product-name {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        font-size: 1em;
+        padding: 5px;
+    }
+    .product-container-name {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        font-size: 1em;
+        padding: 5px;
+    }
+
+    #gallery .page {}
+
+    .mega-block {
+        display: flex;
+        justify-content: center;
+    }
+
+    body {
+        background: #f1ab4b;
+    }
+
+
+    #logo-img {
+        width: 50%;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {}
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and ((min-width: 250px) and (max-width: 767px)) {}
+
+    /* Medium devices (landscape tablets, 300px and up) */
+    @media only screen and ((min-width: 300px) and (max-width: 450px)) {}
+
+    /* Medium devices (landscape tablets, 300px and up) */
+    @media only screen and ((min-width: 451px) and (max-width: 680px)) {}
+
+    /* Medium devices (landscape tablets, 300px and up) */
+    @media only screen and ((min-width: 681px) and (max-width: 999px)) {}
+
+    /* Extra large devices (large laptops and desktops, 1000px and up) */
+    @media only screen and (min-width: 1000px) {
+        .left-head,
+        .right-head {
+            font-size: 4em;
+        }
+        #logo-img{
+          width: 30%;
+        }
+        .products-wrapper {
+          padding: 0;
+          padding-left: 20vw;
+          padding-right: 20vw;
+          padding-bottom: 20px;
+        }
+        .category-block h1 {
+          font-size: 2.5em;
+        }
+        .product-description h4 {
+          font-size:2em;
+        }
+        .product-description p {
+          font-size: 1.4em;
+        }
+        .product-price{
+          font-size:2em;
+        }
+        .container-left h4 {
+          font-size:2em;
+        }
+        .container-right h4 {
+          font-size:2em;
+        }
+    }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="head-container">
+        <div class="left-head">
+            MENU
+        </div>
+        <div class="center-head">
+            <img id="logo-img" src="images/logo_osteria.png">
+        </div>
+        <div class="right-head">
+            OSTERIA
+        </div>
+    </div>
+    <div class="products-wrapper">
+        
+        <div class="category-block">
+            <h1>PIZZE CLASSICHE</h1>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>MEZZO METRO MARGHERITA</h4>
+                    </div>
+                    <div class="product-price">18.00 €</div>
+                </div>
+            </div>
+        </div>
+         <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>MEZZO METRO FARCITO</h4>
+                    </div>
+                    <div class="product-price">24.00 €</div>
+                </div>
+                <p>
+                    Due farciture a scelta
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>1 METRO MARGHERITA</h4>
+                    </div>
+                    <div class="product-price">25.00 €</div>
+                </div>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>1 METRO FARCITO</h4>
+                    </div>
+                    <div class="product-price">35.00 €</div>
+                </div>
+                <p>
+                    Tre farciture a scelta
+                </p>
+            </div>
+        </div>
+
+        <div class="category-block">
+            <h1>PIZZE SPECIALI</h1>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>MEZZO METRO MARINA</h4>
+                    </div>
+                    <div class="product-price">15.00 €</div>
+                </div>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>MEZZO METRO FORNARINA CON PROSCIUTTO CRUDO</h4>
+                    </div>
+                    <div class="product-price">20.00 €</div>
+                </div>
+            </div>
+        </div>
+
+        // terminare sezione
+        <div class="category-block">
+            <h1>FARCITURE PIZZA</h1>
+        </div>
+        // Inizio Copy
+        <div class="parent-container">
+            <div class="container-left">
+                <div class="product-container-name">
+                    <h4>MARGHERITA</h4>
+                </div>
+                <div class="product-description">
+                    <p> Pomodoro, mozzarella fior di latte</p>
+                </div>
+                <div class="product-container-name">
+                    <h4>NAPOLI</h4>
+                </div>
+                <div class="product-description">
+                    <p> Pomodoro, mozzarella, acciughe, capperi</p>
+                </div>
+                <div class="product-container-name">
+                    <h4>4 STAGIONI</h4>
+                </div>
+                <div class="product-description">
+                    <p>Pomodoro, mozzarella, prosciutto cotto, salsiccia, carciofi, funghi</p>
+                </div>
+                <div class="product-container-name">
+                    <h4>VEGETARIANA</h4>
+                </div>
+                <div class="product-description">
+                    <p>Pomodoro, mozzarella, melanzane, zucchine, radicchio, patate</p>
+                </div>
+                <div class="product-container-name">
+                    <h4>4 FORMAGGI</h4>
+                </div>
+                <div class="product-description">
+                    <p>Stracchino, mozzarella, scamorza, gorgonzola</p>
+                </div>
+                <div class="product-container-name">
+                    <h4>BUFALA E PENDOLINI</h4>
+                </div>
+                <div class="product-description">
+                    <p>Bufala D.O.P, pendolini</p>
+                </div>
+                <div class="product-container-name">
+                    <h4>SPECK E RUCOLA</h4>
+                </div>
+                <div class="product-description">
+                    <p>Pomodoro, mozzarella, speck, rucola</p>
+                </div>
+                <div class="product-container-name">
+                    <h4>SALAME PICCANTE</h4>
+                </div>
+                <div class="product-description">
+                    <p>Pomodoro, mozzarella, ventricina piccante</p>
+                </div>
+                 <div class="product-container-name">
+                    <h4>WURSTEL</h4>
+                </div>
+                <div class="product-description">
+                    <p>Pomodoro, mozzarella, wurstel</p>
+                </div>
+                 <div class="product-container-name">
+                    <h4>PROSCIUTTO CRUDO</h4>
+                </div>
+                <div class="product-description">
+                    <p>Pomodoro, mozzarella, prosciutto crudo</p>
+                </div>
+            </div>
+            <div class="container-right">
+                <div class="product-container-name">
+                    <h4>PROSCIUTTO COTTO</h4>
+                </div>
+                <div class="product-description">
+                    <p>Pomodoro, mozzarella, prosciutto cotto</p>
+                </div>
+                <div class="product-container-name">
+                    <h4>TONNO E CIPOLLA</h4>
+                </div>
+                <div class="product-description">
+                    <p>Pomodoro, mozzarella, tonno, cipolla</p>
+                </div>
+                <div class="product-container-name">
+                    <h4>MELANZANE E GRANA</h4>
+                </div>
+                <div class="product-description">
+                    <p>Pomodoro, mozzarella, melanzane, grana</p>
+                </div>
+                <div class="product-container-name">
+                    <h4>STRACCHINO E RUCOLA</h4>
+                </div>
+                <div class="product-description">
+                    <p>Pomodoro, mozzarella, stracchino, rucola</p>
+                </div>
+                <div class="product-container-name">
+                    <h4>SALSICCIA E PATATE</h4>
+                </div>
+                <div class="product-description">
+                    <p>Pomodoro, mozzarella, salsiccia, patate</p>
+                </div>
+                <div class="product-container-name">
+                    <h4>PORCINI E RUCOLA</h4>
+                </div>
+                <div class="product-description">
+                    <p>Pomodoro, mozzarella, porcini, rucola</p>
+                </div>
+                <div class="product-container-name">
+                    <h4>SALSICCIA E FUNGHI</h4>
+                </div>
+                <div class="product-description">
+                    <p>Pomodoro, mozzarella, salsiccia, funghi</p>
+                </div>
+                <div class="product-container-name">
+                    <h4>CRUDO RUCOLA E GRANA</h4>
+                </div>
+                <div class="product-description">
+                    <p>Pomodoro, mozzarella, prosciutto crudo, rucola, grana</p>
+                </div>
+                <div class="product-container-name">
+                    <h4>SPECIALITA'</h4>
+                </div>
+                <div class="product-description">
+                    <p>Pomodoro, scamorza, porcini, radicchio, patate, speck</p>
+                </div>
+            </div>
+        </div>
+        // Fine Copy
+
+        <div class="category-block">
+            <h1>ANTIPASTI</h1>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>AFFETTATI</h4>
+                    </div>
+                    <div class="product-price">15.00 €</div>
+                </div>
+                <p>
+                    Crudo di mora romagnola stagionatura 18-23 Presidio Slov Food, salame stagio- nato, rustichello romagnolo Presidio Slow Food, prosciutto cottofiliera italiana controllata, prosciutto razza suina autoctona della Romagna
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>CROSTINI</h4>
+                    </div>
+                    <div class="product-price">12.00 €</div>
+                </div>
+                <p>
+                    Pane tipo pugliese, verdure, mozzarella, salsiccia, rustichello romagnolo
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>ANTIPASTO DELLA CASA</h4>
+                    </div>
+                    <div class="product-price">23.00 €</div>
+                </div>
+                <p>
+                    Affettati, crostini, formaggio Centrale del Latte di Bressanone
+                </p>
+            </div>
+        </div>
+
+
+        <div class="category-block">
+            <h1>PRIMI</h1>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>STROZZAPRETI FUNGHI E SALSICCIA</h4>
+                    </div>
+                    <div class="product-price">9.00 €</div>
+                </div>
+                <p>
+                    Salsiccia, funghi champignon e porcini, pendolini, prezzemolo, panna
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>RAVIOLACCI ALLE PRIMIZIE DI STAGIONE</h4>
+                    </div>
+                    <div class="product-price">9.00 €</div>
+                </div>
+                <p>
+                    Verdure di stagione del nostro orto
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>GNOCCHI ALLE VERDURE</h4>
+                    </div>
+                    <div class="product-price">9.00 €</div>
+                </div>
+                <p>
+                    Verdure di stagione del nostro orto
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>TAGLIATELLE AL RAGU'</h4>
+                    </div>
+                    <div class="product-price">9.00 €</div>
+                </div>
+                <p>
+                    Carne macinata, pomodoro, sedano, carote, cipolla, olio exstra vergine, sale, pepe
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>TORTELLINI PASTICCIATI</h4>
+                    </div>
+                    <div class="product-price">10.00 €</div>
+                </div>
+                <p>
+                    Ragù e panna
+                </p>
+            </div>
+        </div>
+        <div class="category-block">
+            <h1>SECONDI</h1>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>FILETTO ALLA GRIGLIA</h4>
+                    </div>
+                    <div class="product-price">25.00 €</div>
+                </div>
+                <p>
+                    Bovino di razza chianina filiera italiana controllata
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>FILETTO AI PORCINI</h4>
+                    </div>
+                    <div class="product-price">25.00 €</div>
+                </div>
+                <p>
+                    Bovino di razza chianina filiera italiana controllata 
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>TAGLIATA RUCOLA E GRANA</h4>
+                    </div>
+                    <div class="product-price">25.00 €</div>
+                </div>
+                <p>
+                    Bovino di razza chianina filiera italiana controllata
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>TAGLIATA SALE GROSSO DI CERVIA E ROSMARINO</h4>
+                    </div>
+                    <div class="product-price">25.00 €</div>
+                </div>
+                <p>
+                    Bovino di razza chianina filiera italiana controllata
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>COTOLETTA CON PATATINE FRITTE</h4>
+                    </div>
+                    <div class="product-price">12.00 €</div>
+                </div>
+                <p>
+                    Cotoletta di tacchino allevato a terra filiera italiana controllata
+                </p>
+            </div>
+        </div>
+        <div class="category-block">
+            <h1>BURGER</h1>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>BIG BURGER</h4>
+                    </div>
+                    <div class="product-price">13.00 €</div>
+                </div>
+                <p>
+                    Hamburger di bovino azienda Gourmet Burger, pomodoro, insalta, formaggio Leerdammer
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>VEGETARIANO</h4>
+                    </div>
+                    <div class="product-price">11.00 €</div>
+                </div>
+                <p>
+                    Zucchine, melanzane, radicchio, scamorza affumicata
+                </p>
+            </div>
+        </div>
+        <div class="category-block">
+            <h1>INSALATE</h1>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>MISTA</h4>
+                    </div>
+                    <div class="product-price">4.00 €</div>
+                </div>
+                <p>
+                    Insalata verde, pomodori, carote
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>CAPRESE</h4>
+                    </div>
+                    <div class="product-price">11.00 €</div>
+                </div>
+                <p>
+                    Pomodori a fette, mozzarella di bufala D.O.P, origano, basilico
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>INSALATONA</h4>
+                    </div>
+                    <div class="product-price">11.00 €</div>
+                </div>
+                <p>
+                    Tonno, insalata verde, rucola, pendolini, olive, mozzarella, mais, uovo sodo 
+                </p>
+            </div>
+        </div>
+        <div class="category-block">
+            <h1>CONTORNI</h1>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>PATATE FRITTE</h4>
+                    </div>
+                    <div class="product-price">4.00 €</div>
+                </div>
+                <p>
+                    Insalata verde, pomodori, carote
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>VERDURE ALLA GRIGLIA</h4>
+                    </div>
+                    <div class="product-price">6.00 €</div>
+                </div>
+                <p>
+                    Melanzane, zucchine, radicchio, funghi, pomodoro
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>PATATE AL FORNO</h4>
+                    </div>
+                    <div class="product-price">5.00 €</div>
+                </div>
+            </div>
+        </div>
+        <div class="category-block">
+            <h1>DOLCI FATTI IN CASA</h1>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>PANNA COTTA</h4>
+                    </div>
+                    <div class="product-price">5.00 €</div>
+                </div>
+                <p>
+                    Panna Centrale del latte di Bressanone, zucchero, colla di pesce
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>SEMIFREDDO DELLA CASA</h4>
+                    </div>
+                    <div class="product-price">6.00 €</div>
+                </div>
+                <p>
+                    Uova, zucchero, panna Centrale del latte di Bressanone
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>MASCARPONE</h4>
+                    </div>
+                    <div class="product-price">6.00 €</div>
+                </div>
+                <p>
+                    Mascarpone Centrale del latte di Bressanone, uova, zucchero, panna
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>TIRAMISU'</h4>
+                    </div>
+                    <div class="product-price">6.50 €</div>
+                </div>
+                <p>
+                    Mascarpone Centrale del latte di Bressanone, savoiardi, caffè, panna, zucchero, uova
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>TORTINO AL CIOCCOLATO</h4>
+                    </div>
+                    <div class="product-price">6.50 €</div>
+                </div>
+                <p>
+                    Uova, zucchero, farina, cioccolato fondente Lindt, burro
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>SORBETTO AL LIMONE O CAFFE'</h4>
+                    </div>
+                    <div class="product-price">3.50 €</div>
+                </div>
+                <p>
+                    Gelato al limone o caffè
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>TARTUFO BIANCO, NERO, PISTACCHIO</h4>
+                    </div>
+                    <div class="product-price">6.00 €</div>
+                </div>
+                <p>
+                    Pasticceria artigianale
+                </p>
+            </div>
+        </div>
+            <div class="category-block">
+        <h1>INSALATE</h1>
+    </div>
+    <div class="product-block">
+        <div class="product-description">
+            <div class="product-name-price">
+                <div class="product-name">
+                    <h4>MISTA</h4>
+                </div>
+                <div class="product-price">4.00 €</div>
+            </div>
+                <p>
+                    Insalata verde, pomodori, carote
+                </p>
+        </div>
+    </div>
+
+
+    <div class="category-block">
+        <h1>BIRRE IN BOTTIGLIA</h1>
+    </div>
+    <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>WEISS BIER BOTTIGLIA 50 CL.</h4>
+                    </div>
+                    <div class="product-price">6.00 €</div>
+                </div>
+            </div>
+    </div>
+    <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>BIRRA ARTIGIANALE ROSSA</h4>
+                    </div>
+                    <div class="product-price">7.00 €</div>
+                </div>
+            </div>
+        </div>
+            <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>BIRRA ARTIGIANALE IPA</h4>
+                    </div>
+                    <div class="product-price">7.00 €</div>
+                </div>
+            </div>
+        </div>
+            <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>BIRRA ARTIGIANALE BIONDA</h4>
+                    </div>
+                    <div class="product-price">7.00 €</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-block">
+            <h1>BIRRE ALLA SPINA</h1>
+        </div>
+            <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>PILLS</h4>
+                    </div>
+                    <div class="product-price">€ 4.50 / € 6.00 / € 12.00</div>
+                </div>
+                <p>
+                    Piccola / Media / 1LT.
+                </p>
+            </div>
+        </div>
+            <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>HELLES OPPURE BIRRA ICHNUSA NON FILTRATA</h4>
+                    </div>
+                    <div class="product-price">€ 5.00 / € 6.50 / € 13.00</div>
+                </div>
+                <p>
+                    Piccola / Media / 1LT.
+                </p>
+            </div>
+        </div>
+
+        <div class="category-block">
+            <h1>BAR</h1>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>ACQUA MINERALE BOTIGLIA 75 CL.</h4>
+                    </div>
+                    <div class="product-price">2.50 €</div>
+                </div>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>VINO DELLA CASA BIANCO FRIZZANTE</h4>
+                    </div>
+                    <div class="product-price">€ 11.00 / € 5.50 / € 3.50</div>
+                </div>
+                <p>
+                    1 LT. / MEZZO LT. / 1 QUARTO DI LT.
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>VINO ROSSO BOTTIGLIA</h4>
+                    </div>
+                    <div class="product-price">€ 12.00 / € 6.00 / € 4.00</div>
+                </div>
+                <p>
+                    75 CL. / MEZZO LT. / 1 QUARTO DI LT. 
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>COCA COLA ALLA SPINA</h4>
+                    </div>
+                    <div class="product-price">€ 4.00 / € 4.50</div>
+                </div>
+                <p>
+                    PICCOLA / MEDIA
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>COCA COLA BOTTIGLIA DI VETRO</h4>
+                    </div>
+                    <div class="product-price">€ 4.50 / € 8.50</div>
+                </div>
+                <p>
+                    33 CL. / 1LT.
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>COCA COLA ZERO BOTTIGLIA DI VETRO</h4>
+                    </div>
+                    <div class="product-price">€ 4.50</div>
+                </div>
+                <p>
+                    33 CL.
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>GAZZOSA/ARANCIATA/CHINOTTO BOTTIGLIA DI VETRO</h4>
+                    </div>
+                    <div class="product-price">€ 5.00</div>
+                </div>
+                <p>
+                    33 CL. 
+                </p>
+            </div>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>THE FREDDO LIMONE E PESCA</h4>
+                    </div>
+                    <div class="product-price">€ 5.00</div>
+                </div>
+                <p>
+                    33 CL.
+                </p>
+            </div>
+        </div>
+
+         <div class="category-block">
+            <h1>CAFFE' - AMARI</h1>
+        </div>
+        <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>CAFFE'</h4>
+                    </div>
+                    <div class="product-price">2.00 €</div>
+                </div>
+            </div>
+        </div>
+         <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>CAFFE' CORRETTO</h4>
+                    </div>
+                    <div class="product-price">3.00 €</div>
+                </div>
+            </div>
+        </div>
+         <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>CAFFE' DECAFFEINATO</h4>
+                    </div>
+                    <div class="product-price">2.50 €</div>
+                </div>
+            </div>
+        </div>
+         <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>CAFFE' D'ORSO</h4>
+                    </div>
+                    <div class="product-price">2.50 €</div>
+                </div>
+            </div>
+        </div>
+         <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>AMARI</h4>
+                    </div>
+                    <div class="product-price">4.00 €</div>
+                </div>
+            </div>
+        </div>
+         <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>GRAPPE</h4>
+                    </div>
+                    <div class="product-price">5.00 €</div>
+                </div>
+            </div>
+        </div>
+         <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>RUM / WHISKY</h4>
+                    </div>
+                    <div class="product-price">7.00 €</div>
+                </div>
+            </div>
+        </div>
+         <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>LIMONCELLO / LIQUIRIZIA</h4>
+                    </div>
+                    <div class="product-price">2.50 €</div>
+                </div>
+            </div>
+        </div>
+         <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>LIMONCELLO BOTTIGLIETTA</h4>
+                    </div>
+                    <div class="product-price">8.00 €</div>
+                </div>
+            </div>
+        </div>
+         <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="product-name">
+                        <h4>LIQUIRIZIA BOTTIGLIETTA</h4>
+                    </div>
+                    <div class="product-price">9.00 €</div>
+                </div>
+            </div>
+        </div>
+         <div class="product-block">
+            <div class="product-description">
+                <div class="product-name-price">
+                    <div class="cover-name">
+                        <h4>COPERTO</h4>
+                    </div>
+                    <div class="product-price">€ 2.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    //PRoblema chisura tag prima controllare
+
+</body>
+</html>
