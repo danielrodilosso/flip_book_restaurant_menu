@@ -1,0 +1,235 @@
+html,
+body,
+div {
+    margin: 0;
+    font-size: 18px;
+    font-family: 'Croissant One', cursive;
+}
+
+.parent-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.container-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.container-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.head-container {
+    border-bottom: 3px solid #f1c992;
+    display: flex;
+    padding: 30px;
+    align-items: center;
+}
+
+.left-head {
+    width: 30%;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+}
+
+.right-head {
+    width: 30%;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+}
+
+.center-head {
+    width: 40%;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-block {
+    width: 100%;
+    height: 100px;
+    border: 4px dashed white;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-block h1 {
+    font-size: 2em;
+    color: white;
+    text-shadow: 1px 1px #000000;
+}
+
+.products-wrapper {
+    padding: 15px;
+}
+
+.product-block {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    padding: 13px;
+    justify-content: center;
+    background: #ffffff61;
+    border-radius: 1em;
+    box-shadow: 0px 2px #0000005c;
+}
+.parent-container {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    align-items: flex-start;
+
+    padding: 13px;
+    justify-content: center;
+    background: #ffffff61;
+    border-radius: 1em;
+    box-shadow: 0px 2px #0000005c;
+}
+
+.product-description {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    flex-direction: column;
+    font-size: 0.8em;
+}
+
+.product-description h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: #85341d;
+}
+
+ .product-container-name h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: #85341d;
+}
+
+.product-description p {
+    font-family: 'Playfair Display', serif;
+    display: block;
+}
+
+.product-price {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    font-size: 1em;
+    padding: 5px;
+}
+
+#gallery {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 90%;
+}
+
+.product-name-price {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.product-name {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 1em;
+    padding: 5px;
+}
+.product-container-name {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 1em;
+    padding: 5px;
+}
+
+/* Progetto in 
+.pizze-classiche-container-block {
+    border: 20px solid black;
+    padding: 10px;
+    border-image: url("./images/Frame_Menu.png") 170;
+}
+*/
+
+.mega-block {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    background: #f1ab4b;
+}
+
+
+#logo-img {
+    width: 50%;
+}
+
+/* 
+ MEDIA QUERY SECTION
+ Extra large devices (large laptops and desktops, 1000px and up) 
+*/
+@media only screen and (min-width: 1000px) {
+    .left-head,
+    .right-head {
+        font-size: 4em;
+    }
+    #logo-img{
+      width: 30%;
+    }
+    .products-wrapper {
+      padding: 0;
+      padding-left: 20vw;
+      padding-right: 20vw;
+      padding-bottom: 20px;
+    }
+    .category-block h1 {
+      font-size: 2.5em;
+    }
+    .product-description h4 {
+      font-size:2em;
+    }
+    .product-description p {
+      font-size: 1.4em;
+    }
+    .product-price{
+      font-size:2em;
+    }
+    .container-left h4 {
+      font-size:2em;
+    }
+    .container-right h4 {
+      font-size:2em;
+    }
+}
+
